@@ -11,7 +11,7 @@ Credit for the project goes to:
                 [Email](mailto:JakeAdmire1@gmail.com),
                 [LinkedIn](https://www.linkedin.com/in/jakeadmire)
 - Kim Myers: [GitHub](https://github.com/kimmichurri), 
-             [Email](mailto:empty@gmail.com),
+             [Email](mailto:kimberly.achkio@gmail.com),
              [LinkedIn](https://www.linkedin.com/in/kimberly-achkio-myers-85107a2b/)
 
 #### Design
@@ -45,7 +45,7 @@ Short list of things we'd like to implement in the future given time
 ## Credits
 Credit for this project goes to [Jake Admire](https://github.com/JakeAdmire) and [Kim Myers](https://github.com/kimmichurri)
 
-More contact info can be found [here[()
+More contact info can be found [here](https://github.com/JakeAdmire/MovieTracker#contact-info)
 
 ---
 This project was assigned by Christie Lynam and David Whitaker 
