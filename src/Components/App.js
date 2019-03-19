@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import * as fetch from './../helpers/fetch';
 import { Header } from './Header/Header';
 import { Account } from './Account/Account';
 import { CardContainer } from './CardContainer/CardContainer';
@@ -12,6 +14,11 @@ class App extends Component {
       signedIn: false
     }
   }
+
+  async componentDidMount() {
+    
+  }
+
   render() {
     return (
       <div className="App">
