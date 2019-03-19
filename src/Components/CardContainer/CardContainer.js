@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CardContainer() {
+export function CardContainer() {
   return (
     <div>
       <h1>This is your card container</h1>
