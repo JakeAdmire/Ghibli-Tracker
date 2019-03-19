@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Info } from './Info/Info';
 
-export default class Card extends Component {
+export class Card extends Component {
   constructor() {
     super();
     this.state = {
@@ -12,6 +13,7 @@ export default class Card extends Component {
     return (
       <div>
         <h1>This is your card component</h1>
+        <Info />
       </div>
     )
   }
