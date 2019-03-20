@@ -1,4 +1,4 @@
-import key from './apiKey.js';
+// import { key } from './apiKey.js';
 
 export const fetchFilms = async (url) => {
   try {
@@ -9,6 +9,8 @@ export const fetchFilms = async (url) => {
   }
 }
 
-export const buildUrl = (url) => {
-  return url+key;
-}
+// export const buildUrl = (url) => {
+//   console.log( url.split('?&').splice() );
+
+//   return url;
+// }
