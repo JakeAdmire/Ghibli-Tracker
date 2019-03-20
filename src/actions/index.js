@@ -7,3 +7,8 @@ export const setFilter = (filter) => ({
   type: 'SET_FILTER',
   filter
 })
+
+export const toggleInfo = (id) => ({
+  type: 'TOGGLE_INFO',
+  id
+})
