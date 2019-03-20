@@ -1,4 +1,4 @@
-export const filterReducer = (state, action) => {
+export const filterReducer = (state = 'Show all', action) => {
   switch(action.type) {
 
     case('SET_FILTER'):
