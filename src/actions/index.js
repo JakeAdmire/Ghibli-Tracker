@@ -12,3 +12,10 @@ export const toggleInfo = (id) => ({
   type: 'TOGGLE_INFO',
   id
 })
+
+export const addFilms = (id, img, title) => ({
+  type: 'ADD_FILMS',
+  id,
+  img,
+  title
+})
