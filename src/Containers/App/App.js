@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as fetch from '../../helpers/fetch';
+import { key } from '../../helpers/apiKey';
+import { Header } from '../../Components/Header/Header';
+import { Account } from '../../Components/Account/Account';
+import { CardContainer } from '../../Components/CardContainer/CardContainer';
 
-import * as fetch from './../helpers/fetch';
-import { key } from './../helpers/apiKey';
-import { Header } from './Header/Header';
-import { Account } from './Account/Account';
-import { CardContainer } from './CardContainer/CardContainer';
-
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state={
@@ -37,4 +37,10 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapStateToProps = (state) => ({
+  films: state.defaultFilms,
+  filter: state.filter
+})
+
+export default connect(mapStateToProps, null) (App)
+
