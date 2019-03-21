@@ -1,6 +1,9 @@
 export const filmsReducer = (state = [], action) => {
   switch(action.type) {
 
+    case('ADD_FILMS'):
+      return action.films
+
     case('TOGGLE_FAVORITED'):
       return state.map(film => {
         if (film.id === action.id) {

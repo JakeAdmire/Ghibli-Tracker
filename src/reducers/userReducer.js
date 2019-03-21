@@ -1,4 +1,4 @@
-export const usersReducer = (state = [], action) => {
+export const userReducer = (state = {}, action) => {
   switch(action.type) {
 
     case('LOG_IN'):
