@@ -13,7 +13,7 @@ export function CardContainer(props) {
     return <Card key={film.id} {...info} />
   })
   return (
-    <div>
+    <div className="CardContainer">
       { displayFilms }
     </div>
   )

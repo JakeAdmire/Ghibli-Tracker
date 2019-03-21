@@ -1,0 +1,13 @@
+@mixin flexBox($dir, $items, $just) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $items;
+  justify-content: $just;
+}
+
+@mixin customFont($size, $weight, $deco, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  text-decoration: $deco;
+  color: $color;
+}

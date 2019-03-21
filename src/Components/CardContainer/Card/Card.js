@@ -11,9 +11,12 @@ export class Card extends Component {
 
   render() {
     const { poster } = this.props;
+    let style = { 
+      backgroundImage: `url(${poster})`,
+      backgroundSize: 'cover'
+      }
     return (
-      <div>
-        <img src={poster} />
+      <div className="Card" style={ style } >
         <Info />
       </div>
     )
