@@ -3,4 +3,39 @@
   height: 500px;
   margin: auto;
   border-radius: 30px;
+  transition: all .2s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover { 
+    transform: scale(1.05); 
+    cursor: pointer;
+  }
+
+  .screen {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+
+    border-radius: 30px;
+    background: radial-gradient(hsla(0, 0%, 0%, 0.4) 30%, hsla(0, 0%, 0%, 0.8) 95%);
+    opacity: 0;
+
+    transition: all .2s ease;
+
+    span {
+      display: block;
+      transition: all .3s ease;
+      margin: 25em 0 0 20px;
+
+      @include customFont(20px, 600, initial, white);
+    }
+
+    &:hover {
+      opacity: 1;
+
+      span {
+        margin-top: 23em;
+      }
+    }
+  }
 }
