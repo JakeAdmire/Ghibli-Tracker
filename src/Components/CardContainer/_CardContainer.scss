@@ -1,0 +1,7 @@
+.CardContainer {
+  display: grid;
+  grid-gap: 40px 30px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  padding: 120px 20px 40px 20px;
+}
