@@ -1,6 +1,7 @@
 import * as actions from './index';
 
 describe('actions', () => {
+
   it('should return a type of TOGGLE_FAVORITED', () => {
     const id = 1
     const expected = {
@@ -40,4 +41,5 @@ describe('actions', () => {
     const result = actions.addFilms(films)
     expect(result).toEqual(expected)
   })
+  
 })
