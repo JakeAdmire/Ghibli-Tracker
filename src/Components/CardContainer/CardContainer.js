@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 
 export function CardContainer(props) {
   const { films } = props
-  console.log(props)
   const displayFilms = films.map((film) => {
     let info = {
       poster: `https://image.tmdb.org/t/p/w500${film.poster_path}`,
+      title: film.title,
+      id: film.id
     };
-
     return <Card key={film.id} {...info} />
   })
   return (
@@ -20,7 +20,7 @@ export function CardContainer(props) {
 }
 
 export const mapStateToProps = (state) => ({
-  films: state.defaultFilms
+  films: state.films
 })
 
 export default connect(mapStateToProps, null)(CardContainer)
