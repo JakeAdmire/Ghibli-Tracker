@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { filmsReducer } from "./flimsReducer";
+import { filmsReducer } from "./filmsReducer";
 import { filterReducer } from "./filterReducer";
 import { userReducer } from "./userReducer";
 
