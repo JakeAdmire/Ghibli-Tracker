@@ -1,5 +1,3 @@
-// import { key } from './apiKey.js';
-
 export const fetchFilms = async (url) => {
   try {
     const response = await fetch(url);
@@ -9,9 +7,3 @@ export const fetchFilms = async (url) => {
     throw new Error('Response not okay');
   }
 }
-
-// export const buildUrl = (url) => {
-//   console.log( url.split('?&').splice() );
-
-//   return url;
-// }
