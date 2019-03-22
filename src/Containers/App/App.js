@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as fetch from '../../helpers/fetch';
 import { key } from '../../helpers/apiKey';
+import { NavLink, Route } from 'react-router-dom';
+
 import { Header } from '../../Components/Header/Header';
 import { Account } from '../../Components/Account/Account';
+import { Info } from '../../Components/CardContainer/Card/Info/Info';
 import CardContainer from '../../Components/CardContainer/CardContainer';
 import { addFilms } from '../../actions';
 import { Loader } from '../../Components/Loader/Loader';
@@ -30,19 +33,28 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-          <Header />
-          <Account />
-          {
-            !this.state.showFilms ? <Loader /> : <CardContainer />
-          }
+        <Header />
+        <NavLink to='/login' className="login">Log in:</NavLink>
+        <Route exact path='/' component={CardContainer} />
+        <Route exact path='/login' component={Account} />
+        <Route path='/:id' render={ ({match}) => {
+          const film = this.props.films.find(film => film.id == match.params.id);
+
+          if (film) { return <Info {...film} /> }
+        } }/>
+
       </div>
     );
   }
 }
 
+export const mapStateToProps = (state) => ({
+  films: state.films
+})
+
 export const mapDispatchToProps = (dispatch) => ({
   addFilms: (films) => dispatch(addFilms(films))
 })
 
-export default connect(null, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
 
