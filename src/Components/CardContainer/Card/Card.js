@@ -20,7 +20,6 @@ export class Card extends Component {
         <div className="screen">
           <span>{ title }</span>
         </div>
-        <Info />
       </div>
     )
   }
