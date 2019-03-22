@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from './Card/Card';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export function CardContainer(props) {
   const { films } = props
@@ -10,7 +11,9 @@ export function CardContainer(props) {
       title: film.title,
       id: film.id
     };
-    return <Card key={film.id} {...info} />
+    return  <Link to={`/${film.id}`}>
+              <Card key={film.id} {...info} />
+            </Link>
   })
   return (
     <div className="CardContainer">
