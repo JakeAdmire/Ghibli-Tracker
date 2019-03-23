@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match the snapshot 1`] = `
+"<div className=\\"Header\\">
+  <h1>
+    Howl&#39;s Movie Castle
+  </h1>
+</div>"
+`;
