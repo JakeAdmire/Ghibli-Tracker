@@ -23,3 +23,9 @@ export const addUser = (email, password) => ({
   email,
   password
 })
+
+export const loginUser = (email, password) => ({
+  type: 'LOGIN_USER',
+  email,
+  password
+})
