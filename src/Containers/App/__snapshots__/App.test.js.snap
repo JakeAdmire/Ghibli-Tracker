@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App should match the snapshot 1`] = `
+"<div className=\\"App\\">
+  <Header />
+  <NavLink to=\\"/login\\" className=\\"login\\">
+    Log in:
+  </NavLink>
+  <Route exact={true} path=\\"/\\" component={[Function: Connect]} />
+  <Route exact={true} path=\\"/login\\" component={[Function: Connect]} />
+  <Route path=\\"/:id\\" render={[Function: render]} />
+</div>"
+`;
