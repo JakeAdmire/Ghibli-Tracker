@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addUser, loginUser } from '../../actions';
 
 export class Account extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: '',
       email: '',
@@ -43,8 +45,8 @@ export class Account extends Component {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginData),
       })
-      const data = await response.json();
-      console.log(data);
+      const result = await response.json();
+      this.props.loginUser(result.data.id, loginData.name);
     } catch(error) {
         throw new Error('incorrect email/password');
       }
@@ -58,7 +60,7 @@ export class Account extends Component {
         body: JSON.stringify(signupData), 
       })
       const data = await response.json();
-      console.log(data);
+      this.props.loginUser(data.id, signupData.name); 
     } catch(error) {
       throw new Error('user already exists');
     }
@@ -79,3 +81,10 @@ export class Account extends Component {
     )
   }
 }
+
+
+const mapDispatchToProps = (dispatch) => ({
+  loginUser: (id, name) => dispatch(loginUser(id, name)),
+})
+
+export default connect(null, mapDispatchToProps)(Account);
