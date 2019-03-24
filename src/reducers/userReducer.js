@@ -1,10 +1,11 @@
 export const userReducer = (state = {}, action) => {
   switch(action.type) {
 
-    case('LOG_IN'):
-      return 
-      // action.user {email: '', password: ''}
-      // if ()
+    case('LOGIN_USER'):
+      return
+
+    case('ADD_USER'):
+      return
 
     default:
       return state;
