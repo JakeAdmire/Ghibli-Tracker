@@ -22,7 +22,6 @@ export class App extends Component {
     let url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_companies=10342`;
     const recentFilms = await fetch.fetchFilms(url);
     this.props.addFilms(recentFilms.results)
-    this.setState({showFilms: true})
   }
 
   render() {
