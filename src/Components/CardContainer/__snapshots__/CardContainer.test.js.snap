@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardContainer CardContainer should match the snapshot 1`] = `
+"<div className=\\"CardContainer\\">
+  <Link to=\\"/129\\">
+    <Card poster=\\"https://image.tmdb.org/t/p/w500/oRvMaJOmapypFUcQqpgHMZA6qL9.jpg\\" title=\\"Spirited Away\\" id={129} />
+  </Link>
+</div>"
+`;
