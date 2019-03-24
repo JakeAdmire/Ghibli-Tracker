@@ -41,5 +41,29 @@ describe('actions', () => {
     const result = actions.addFilms(films)
     expect(result).toEqual(expected)
   })
+
+  it('should return a type of ADD_USER', () => {
+    const email = 'test@test.com';
+    const password = 'password';
+    const expected = {
+      type: 'ADD_USER',
+      email,
+      password
+    }
+    const result = actions.addUser(email, password);
+    expect(result).toEqual(expected);
+  })
+
+  it('should return a type of LOGIN_USER', () => {
+    const email = 'test@test.com';
+    const password = 'password';
+    const expected = {
+      type: 'LOGIN_USER',
+      email,
+      password
+    }
+    const result = actions.loginUser(email, password);
+    expect(result).toEqual(expected);
+  })
   
 })

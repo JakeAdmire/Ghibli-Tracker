@@ -17,3 +17,9 @@ export const addFilms = (films) => ({
   type: 'ADD_FILMS',
   films
 })
+
+export const loginUser = (id, name) => ({
+  type: 'LOGIN_USER',
+  id,
+  name
+})
