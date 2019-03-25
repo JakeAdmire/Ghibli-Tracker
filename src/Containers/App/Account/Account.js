@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser, loginUser } from '../../actions';
+import PropTypes from 'prop-types'
+
+import { loginUser } from '../../../actions';
 
 export class Account extends Component {
   constructor(props) {
@@ -19,34 +21,21 @@ export class Account extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { name, email, password } = this.state;
     const { value } = e.target;
-    const loginData = {
-      email: email.toLowerCase(),
-      password: password
-    } 
-    const signupData = {
-      name: name,
-      email: email.toLowerCase(),
-      password: password
-    } 
+    const formData = this.state;
+    formData.email = formData.email.toLowerCase();
     if (value === 'Log In') {
-      this.validateUser('/api/users', loginData);
+      this.validateUser('/api/users', formData);
     }
     if (value === 'Sign Up') {
-      this.createUser('/api/users/new', signupData);
+      this.createUser('/api/users/new', formData);
     }
   }
 
   async validateUser(url = '', loginData = {}) {
     try {
-      const response = await fetch(`http://localhost:3000${url}`, {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(loginData),
-      })
-      const result = await response.json();
-      this.props.loginUser(result.data.id, loginData.name);
+      const results = await this.fetchUser(url, loginData);
+      this.props.loginUser(results.data.id, loginData.name);
     } catch(error) {
         throw new Error('incorrect email/password');
       }
@@ -54,16 +43,21 @@ export class Account extends Component {
 
   async createUser(url = '', signupData = {}) {
     try {
-      const response = await fetch(`http://localhost:3000${url}`, {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(signupData), 
-      })
-      const data = await response.json();
-      this.props.loginUser(data.id, signupData.name); 
+      const results = await this.fetchUser(url, signupData);
+      this.props.loginUser(results.id, signupData.name); 
     } catch(error) {
       throw new Error('user already exists');
     }
+  }
+
+  async fetchUser(url, data) {
+    const response = await fetch(`http://localhost:3000${url}`, {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data), 
+    })
+    const results = await response.json();
+    return results;
   }
 
   render() {
@@ -88,3 +82,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(null, mapDispatchToProps)(Account);
+
+Account.propTypes = {
+    loginUser: PropTypes.func.isRequired
+}
