@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser, loginUser } from '../../../actions';
+import PropTypes from 'prop-types'
+
+import { loginUser } from '../../../actions';
 
 export class Account extends Component {
   constructor(props) {
@@ -20,7 +22,7 @@ export class Account extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, password } = this.state;
-    const { value } = e.target;
+    // const { value } = e.target;
     const loginData = {
       email: email.toLowerCase(),
       password: password
@@ -77,6 +79,7 @@ export class Account extends Component {
   }
 
   render() {
+    console.log('props', this.props)
     return (
       <form>
         <label htmlFor='name'>Name:</label>
@@ -98,3 +101,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(null, mapDispatchToProps)(Account);
+
+Account.propTypes = {
+    loginUser: PropTypes.func.isRequired
+}
