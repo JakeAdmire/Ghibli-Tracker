@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser, loginUser } from '../../actions';
+import { addUser, loginUser } from '../../../actions';
 
 export class Account extends Component {
   constructor(props) {
