@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { App, mapStateToProps } from './App';
-import { Provider } from 'react-redux';
+import { App, mapStateToProps, mapDispatchToProps } from './App';
 import { shallow } from 'enzyme';
-import * as fetch from '../../helpers/fetch';
+import { addFilms } from '../../actions';
 
 
 describe('App', () => {
@@ -102,6 +100,19 @@ describe('App', () => {
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps).toEqual(expected)
 
+    })
+
+  })
+
+  describe('mapDispatchToProps', () => {
+
+    it('should provide a method to use to dispatch an action creator', () => {
+      const mockFilm = {title: 'Spirited Away', id: 129}
+      const mockDispatch = jest.fn()
+      const actionToDispatch = addFilms(mockFilm)
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.addFilms(mockFilm)
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
 
   })
