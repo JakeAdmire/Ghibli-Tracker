@@ -21,32 +21,14 @@ export class Account extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { name, email, password } = this.state;
-    // const { value } = e.target;
-    const loginData = {
-      email: email.toLowerCase(),
-      password: password
-    } 
-    const signupData = {
-      name: name,
-      email: email.toLowerCase(),
-      password: password
-    } 
-    // if (value === 'Log In') {
-    //   this.validateUser('/api/users', loginData);
-    // }
-    // if (value === 'Sign Up') {
-    //   this.createUser('/api/users/new', signupData);
-    // }
-    switch(e.target.value) {
-
-      case('Log In'):
-        console.log('LogIn', e.target.value);
-        return this.validateUser('/api/users', loginData);
-
-      case('Sign Up'):
-        console.log('SignUp', e.target.value);
-        return this.validateUser('/api/users/new', signupData);
+    const { value } = e.target;
+    const formData = this.state;
+    formData.email = formData.email.toLowerCase();
+    if (value === 'Log In') {
+      this.validateUser('/api/users', formData);
+    }
+    if (value === 'Sign Up') {
+      this.createUser('/api/users/new', formData);
     }
   }
 
@@ -79,7 +61,6 @@ export class Account extends Component {
   }
 
   render() {
-    console.log('props', this.props)
     return (
       <form>
         <label htmlFor='name'>Name:</label>
