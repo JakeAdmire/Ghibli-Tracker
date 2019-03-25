@@ -30,23 +30,28 @@ export class Account extends Component {
       email: email.toLowerCase(),
       password: password
     } 
-    if (value === 'Log In') {
-      this.validateUser('/api/users', loginData);
-    }
-    if (value === 'Sign Up') {
-      this.createUser('/api/users/new', signupData);
+    // if (value === 'Log In') {
+    //   this.validateUser('/api/users', loginData);
+    // }
+    // if (value === 'Sign Up') {
+    //   this.createUser('/api/users/new', signupData);
+    // }
+    switch(e.target.value) {
+
+      case('Log In'):
+        console.log('LogIn', e.target.value);
+        return this.validateUser('/api/users', loginData);
+
+      case('Sign Up'):
+        console.log('SignUp', e.target.value);
+        return this.validateUser('/api/users/new', signupData);
     }
   }
 
   async validateUser(url = '', loginData = {}) {
     try {
-      const response = await fetch(`http://localhost:3000${url}`, {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(loginData),
-      })
-      const result = await response.json();
-      this.props.loginUser(result.data.id, loginData.name);
+      const results = await this.fetchUser(url, loginData);
+      this.props.loginUser(results.data.id, loginData.name);
     } catch(error) {
         throw new Error('incorrect email/password');
       }
@@ -54,16 +59,21 @@ export class Account extends Component {
 
   async createUser(url = '', signupData = {}) {
     try {
-      const response = await fetch(`http://localhost:3000${url}`, {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(signupData), 
-      })
-      const data = await response.json();
-      this.props.loginUser(data.id, signupData.name); 
+      const results = await this.fetchUser(url, signupData);
+      this.props.loginUser(results.id, signupData.name); 
     } catch(error) {
       throw new Error('user already exists');
     }
+  }
+
+  async fetchUser(url, data) {
+    const response = await fetch(`http://localhost:3000${url}`, {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data), 
+    })
+    const results = await response.json();
+    return results;
   }
 
   render() {
