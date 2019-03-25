@@ -10,5 +10,13 @@ describe('userReducer', () => {
     const results = userReducer(state, action);
     expect(results).toEqual(state);
   })
+
+  it('should return state with a user', () => {
+    const expected = {id: 1, name: 'Jake'};
+    const { id, name } = expected;
+    const action = actions.loginUser(id, name);
+    const results = userReducer(state, action);
+    expect(results).toEqual(expected);
+  })
   
 })
