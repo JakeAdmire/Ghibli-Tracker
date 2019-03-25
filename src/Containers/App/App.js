@@ -3,13 +3,11 @@ import { connect } from 'react-redux';
 import * as fetch from '../../helpers/fetch';
 import { key } from '../../helpers/apiKey';
 import { NavLink, Route } from 'react-router-dom';
-
 import { Header } from '../../Components/Header/Header';
 import Account from '../../Components/Account/Account';
 import { Info } from '../../Components/CardContainer/Card/Info/Info';
 import CardContainer from '../../Components/CardContainer/CardContainer';
 import { addFilms } from '../../actions';
-import { Loader } from '../../Components/Loader/Loader';
 
 export class App extends Component {
   constructor(props) {
