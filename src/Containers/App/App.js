@@ -8,6 +8,7 @@ import Account from '../../Components/Account/Account';
 import { Info } from '../../Components/CardContainer/Card/Info/Info';
 import CardContainer from '../../Components/CardContainer/CardContainer';
 import { addFilms } from '../../actions';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
   constructor(props) {
@@ -51,4 +52,9 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+App.propTypes = {
+  addFilms: PropTypes.func.isRequired,
+  films: PropTypes.array
+}
 

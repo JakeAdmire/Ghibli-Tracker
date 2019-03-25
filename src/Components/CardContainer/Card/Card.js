@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Info } from './Info/Info';
 
 export class Card extends Component {
   constructor(props) {
@@ -24,3 +23,4 @@ export class Card extends Component {
     )
   }
 }
+
