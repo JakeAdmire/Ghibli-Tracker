@@ -21,7 +21,7 @@ describe('Card', () => {
   })
 
   it ('should match the snapshot', () => {
-
+    expect(wrapper.debug()).toMatchSnapshot();
   })
 
 })
