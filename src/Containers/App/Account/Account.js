@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Route, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { loginUser } from '../../../actions';
-import { CardContainer } from '../../../Components/CardContainer/CardContainer';
 
 export class Account extends Component {
   constructor(props) {
@@ -66,15 +65,23 @@ export class Account extends Component {
 
   render() {
     return (
-      <form>
-        <label htmlFor='name'>Name:</label>
-        <input type='text' name='name' value={this.state.name} onChange={this.handleChange} />
-        <label htmlFor='email'>Email:</label>
-        <input type='text' name='email' value={this.state.email} onChange={this.handleChange} />
-        <label htmlFor='password'>Password:</label>
-        <input type='text' name='password' value={this.state.password} onChange={this.handleChange} />
-        <button value="Log In" onClick={this.handleSubmit}>Log In</button>
-        <button value="Sign Up" onClick={this.handleSubmit}>Sign Up</button>
+      <div>
+        <form>
+          <label htmlFor='email'>Email:</label>
+          <input type='text' name='email' value={this.state.email} onChange={this.handleChange} required/>
+          <label htmlFor='password'>Password:</label>
+          <input type='text' name='password' value={this.state.password} onChange={this.handleChange} required/>
+          <button value="Log In" onClick={this.handleSubmit}>Log In</button>
+        </form>
+        <form>
+          <label htmlFor='name'>Name:</label>
+          <input type='text' name='name' value={this.state.name} onChange={this.handleChange} required/>
+          <label htmlFor='email'>Email:</label>
+          <input type='text' name='email' value={this.state.email} onChange={this.handleChange} required/>
+          <label htmlFor='password'>Password:</label>
+          <input type='text' name='password' value={this.state.password} onChange={this.handleChange} required/>
+          <button value="Sign Up" onClick={this.handleSubmit}>Sign Up</button>
+        </form>
         {
           this.state.loggedIn && <Redirect to='/' />
         }
@@ -85,7 +92,8 @@ export class Account extends Component {
             <div>Please sign in or create an account</div>
           )
         }
-      </form>
+      
+      </div>
     )
   }
 }
