@@ -12,7 +12,8 @@ export class Account extends Component {
       name: '',
       email: '',
       password: '',
-      loggedIn: false
+      loggedIn: false,
+      errorMessage: ''
     }
   }
 
@@ -40,7 +41,7 @@ export class Account extends Component {
       this.props.loginUser(results.data.id, results.data.name);
       this.setState({loggedIn: true})
     } catch(error) {
-        throw new Error('incorrect email/password');
+      this.setState({errorMessage: 'Sorry, you entered an incorrect email or password'})
       }
   }
 
@@ -75,7 +76,14 @@ export class Account extends Component {
         <button value="Log In" onClick={this.handleSubmit}>Log In</button>
         <button value="Sign Up" onClick={this.handleSubmit}>Sign Up</button>
         {
-          this.state.loggedIn ? <Redirect to='/' /> : ''
+          this.state.loggedIn && <Redirect to='/' />
+        }
+        {
+          this.state.errorMessage ? (
+            <div>{this.state.errorMessage}</div>
+          ) : (
+            <div>Please sign in or create an account</div>
+          )
         }
       </form>
     )
