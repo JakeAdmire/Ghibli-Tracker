@@ -74,7 +74,7 @@ export class Card extends Component {
           <button className={faveClass} onClick={this.toggleFavorite}>FAVE</button>
         </div>
         {
-          this.state.redirect ? <Redirect to='/login' /> : ''
+          this.state.redirect && <Redirect to='/login' />
         }
       </div>
     )
