@@ -7,6 +7,10 @@ export const userReducer = (state = {}, action) => {
         name: action.name
       }
 
+    case('ADD_FAVORITE'):
+      let userFavorites = [...state.favorites, action.id];
+      return {...state, favorites: userFavorites}
+
     default:
       return state;
   }
