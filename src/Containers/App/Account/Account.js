@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { Route, Redirect } from 'react-router-dom';
 
 import { loginUser } from '../../../actions';
+import { CardContainer } from '../../../Components/CardContainer/CardContainer';
 
 export class Account extends Component {
   constructor(props) {
@@ -10,7 +12,8 @@ export class Account extends Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      loggedIn: false
     }
   }
 
@@ -36,6 +39,7 @@ export class Account extends Component {
     try {
       const results = await this.fetchUser(url, loginData);
       this.props.loginUser(results.data.id, results.data.name);
+      this.setState({loggedIn: true})
     } catch(error) {
         throw new Error('incorrect email/password');
       }
@@ -71,6 +75,9 @@ export class Account extends Component {
         <input type='text' name='password' value={this.state.password} onChange={this.handleChange} />
         <button value="Log In" onClick={this.handleSubmit}>Log In</button>
         <button value="Sign Up" onClick={this.handleSubmit}>Sign Up</button>
+        {
+          this.state.loggedIn ? <Redirect to='/' /> : ''
+        }
       </form>
     )
   }
