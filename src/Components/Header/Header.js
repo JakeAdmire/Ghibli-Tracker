@@ -1,18 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class Header extends Component {
-  constructor() {
-    super();
-  }
+export function Header() {
 
-  // build getFavorites method
+  return (
+    <div className="Header">
+      <h1>Howl's Movie Castle</h1>
+    </div>
+  )
 
-  render() { 
-    return (
-      <div className="Header">
-        <h1>Howl's Movie Castle</h1>
-        <button>Faves</button>
-      </div>
-    )
-  }
 }
