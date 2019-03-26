@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
-
 import { loginUser } from '../../../actions';
 import { CardContainer } from '../../../Components/CardContainer/CardContainer';
 

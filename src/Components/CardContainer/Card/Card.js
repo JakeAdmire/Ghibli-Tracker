@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { addFavorite } from '../../../actions';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import * as help from '../../../helpers/fetch';
 
 export class Card extends Component {
@@ -9,26 +9,23 @@ export class Card extends Component {
     super(props);
     this.state = {
       favorite: false,
+      redirect: false
     }
   }
 
-  // dont forget to set the favorites to the users state
   toggleFavorite = async () => {
     const { user, id } = this.props
-    const results = await help.fetchFilms(`http://localhost:3000/api/users/${user.id}/favorites`);
-
     let matchFound = false;
-    results.data.forEach(film => {
-      if (film.movie_id === id) { matchFound = true } 
-    })
-
-    if (user.name) {  
+    if (user.name) {
+      const results = await help.fetchFilms(`http://localhost:3000/api/users/${user.id}/favorites`);
+      results.data.forEach(film => {
+        if (film.movie_id === id) { matchFound = true }
+      })
       let methodPrefix = matchFound ? 'delete' : 'add';
       this[`${methodPrefix}Favorite`]();
-      // set results.data to global user favorites (only id's) IS THIS UNNECESSARY -- MAYBE FOR LOCALSTORAGE
     } else {
       console.log('log in, stupid');
-      // route to login
+      this.setState({redirect: true});
     }
   }
 
@@ -76,6 +73,9 @@ export class Card extends Component {
           </Link>
           <button className={faveClass} onClick={this.toggleFavorite}>FAVE</button>
         </div>
+        {
+          this.state.redirect ? <Redirect to='/login' /> : ''
+        }
       </div>
     )
   }
