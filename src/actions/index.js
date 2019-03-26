@@ -23,8 +23,3 @@ export const loginUser = (id, name) => ({
   id,
   name
 })
-
-export const addFavorite = (id) => ({
-  type: 'ADD_FAVORITE',
-  id
-})

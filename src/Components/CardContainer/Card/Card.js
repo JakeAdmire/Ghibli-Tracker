@@ -85,8 +85,4 @@ export const mapStateToProps = (state) => ({
   user: state.user
 })
 
-export const mapDispatchToProps = (dispatch) => ({
-  addFavorite: (id) => dispatch(addFavorite(id))
-})
-
 export default connect(mapStateToProps, null)(Card);
