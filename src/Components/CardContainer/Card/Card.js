@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { addFavorite } from '../../../actions';
 import { connect } from 'react-redux';
-import { Route, Link } from 'react-router-dom';
-import Account from '../../../Containers/App/Account/Account';
+import { Link } from 'react-router-dom';
+import * as help from '../../../helpers/fetch';
 
 export class Card extends Component {
   constructor(props) {
@@ -12,41 +12,31 @@ export class Card extends Component {
     }
   }
 
-  
+  // dont forget to set the favorites to the users state
+  toggleFavorite = async () => {
+    const { user, id } = this.props
+    const results = await help.fetchFilms(`http://localhost:3000/api/users/${user.id}/favorites`);
 
-  async addFavorite() {
-    // const { movie_id, user_id, title, poster_path, release_date, vote_average, overview } = this.props;
-    // this.props.addFavorite(movie_id);
-    // const movieData = {
-    //   movie_id, 
-    //   user_id, 
-    //   title, 
-    //   poster_path, 
-    //   release_date, 
-    //   vote_average, 
-    //   overview
-    // }
-    // try {
-    //   const response = await fetch('http://localhost:3000/api/users/favorites/new', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json'},
-    //     body: JSON.stringify(movieData)
-    //   })
-    //   const results = await response.json();
-    //   console.log(results);
-    // } catch(error) {
-    //   throw new Error('oops');
-    // }
-  }
+    let matchFound = false;
+    results.data.forEach(film => {
+      if (film.movie_id === id) { matchFound = true } 
+    })
 
-  deleteFavorite() {
-
+    if (user.name) {  
+      let methodPrefix = matchFound ? 'delete' : 'add';
+      this[`${methodPrefix}Favorite`]();
+      // set results.data to global user favorites (only id's) IS THIS UNNECESSARY -- MAYBE FOR LOCALSTORAGE
+    } else {
+      console.log('log in, stupid');
+      // route to login
+    }
   }
 
   render() {
-    const { poster, title, id, toggleFavorite } = this.props;
+    const faveClass = this.state.favorite ? 'faved' : '';
+    const { poster_path, title, id } = this.props;
     let style = { 
-      backgroundImage: `url(${poster})`,
+      backgroundImage: `url(https://image.tmdb.org/t/p/w500${poster_path})`,
       backgroundSize: 'cover'
       }
     return (
@@ -55,7 +45,7 @@ export class Card extends Component {
           <Link to={`/${id}`}>
             <span>{ title }</span>
           </Link>
-          <button onClick={ () => toggleFavorite(id, this.state.favorite) }>FAVE</button>
+          <button className={faveClass} onClick={this.toggleFavorite}>FAVE</button>
         </div>
       </div>
     )
@@ -70,6 +60,4 @@ export const mapDispatchToProps = (dispatch) => ({
   addFavorite: (id) => dispatch(addFavorite(id))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
-
-// movie_id, user_id and title, poster_path, release_date, vote_average, overview
+export default connect(mapStateToProps, null)(Card);
