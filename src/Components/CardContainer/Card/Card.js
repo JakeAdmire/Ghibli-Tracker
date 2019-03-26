@@ -32,6 +32,23 @@ export class Card extends Component {
     }
   }
 
+  addFavorite = async () => {
+    const { id, title, poster_path, release_date, vote_average, overview, user } = this.props
+    await fetch('http://localhost:3000/api/users/favorites/new', {
+      method: 'POST',
+      body: JSON.stringify({
+        user_id: user.id,
+        movie_id: id, 
+        title, 
+        poster_path,
+        release_date,
+        vote_average,
+        overview
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    })
+  }
+
   render() {
     const faveClass = this.state.favorite ? 'faved' : '';
     const { poster_path, title, id } = this.props;
