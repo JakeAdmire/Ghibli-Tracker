@@ -35,7 +35,7 @@ export class Account extends Component {
   async validateUser(url = '', loginData = {}) {
     try {
       const results = await this.fetchUser(url, loginData);
-      this.props.loginUser(results.data.id, loginData.name);
+      this.props.loginUser(results.data.id, results.data.name);
     } catch(error) {
         throw new Error('incorrect email/password');
       }
