@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types'
-
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { loginUser } from '../../../actions';
 
 export class Account extends Component {
@@ -10,7 +10,9 @@ export class Account extends Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      loggedIn: false,
+      errorMessage: ''
     }
   }
 
@@ -36,8 +38,9 @@ export class Account extends Component {
     try {
       const results = await this.fetchUser(url, loginData);
       this.props.loginUser(results.data.id, results.data.name);
+      this.setState({loggedIn: true})
     } catch(error) {
-        throw new Error('incorrect email/password');
+      this.setState({errorMessage: 'Sorry, you entered an incorrect email or password'})
       }
   }
 
@@ -62,16 +65,35 @@ export class Account extends Component {
 
   render() {
     return (
-      <form>
-        <label htmlFor='name'>Name:</label>
-        <input type='text' name='name' value={this.state.name} onChange={this.handleChange} />
-        <label htmlFor='email'>Email:</label>
-        <input type='text' name='email' value={this.state.email} onChange={this.handleChange} />
-        <label htmlFor='password'>Password:</label>
-        <input type='text' name='password' value={this.state.password} onChange={this.handleChange} />
-        <button value="Log In" onClick={this.handleSubmit}>Log In</button>
-        <button value="Sign Up" onClick={this.handleSubmit}>Sign Up</button>
-      </form>
+      <div>
+        <form>
+          <label htmlFor='email'>Email:</label>
+          <input type='text' name='email' value={this.state.email} onChange={this.handleChange} required/>
+          <label htmlFor='password'>Password:</label>
+          <input type='text' name='password' value={this.state.password} onChange={this.handleChange} required/>
+          <button value="Log In" onClick={this.handleSubmit}>Log In</button>
+        </form>
+        <form>
+          <label htmlFor='name'>Name:</label>
+          <input type='text' name='name' value={this.state.name} onChange={this.handleChange} required/>
+          <label htmlFor='email'>Email:</label>
+          <input type='text' name='email' value={this.state.email} onChange={this.handleChange} required/>
+          <label htmlFor='password'>Password:</label>
+          <input type='text' name='password' value={this.state.password} onChange={this.handleChange} required/>
+          <button value="Sign Up" onClick={this.handleSubmit}>Sign Up</button>
+        </form>
+        {
+          this.state.loggedIn && <Redirect to='/' />
+        }
+        {
+          this.state.errorMessage ? (
+            <div>{this.state.errorMessage}</div>
+          ) : (
+            <div>Please sign in or create an account</div>
+          )
+        }
+      
+      </div>
     )
   }
 }

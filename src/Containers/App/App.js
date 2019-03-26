@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { key } from '../../helpers/apiKey';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as help from '../../helpers/fetch';
-
 import Account from './Account/Account';
 import CardContainer from '../../Components/CardContainer/CardContainer';
 import { Header } from '../../Components/Header/Header';
@@ -15,6 +14,9 @@ import { addFilms } from '../../actions';
 export class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      redirect: false
+    }
   }
 
   componentDidMount() {
@@ -28,21 +30,16 @@ export class App extends Component {
   }
 
   determineFavorites = async () => {
-
     const { user } = this.props
-
     if (user.name) {
       const results = await help.fetchFilms(`http://localhost:3000/api/users/${user.id}/favorites`);
-
       if (JSON.stringify(this.props.films) === JSON.stringify(results.data)) {
         this.buildCards();
       } else {
         this.props.addFilms(results.data);
       }
-
     } else {
-      console.log('please log in');
-      // route to login page
+      this.setState({redirect: true})
     }
   }
 
@@ -58,6 +55,9 @@ export class App extends Component {
           const film = this.props.films.find(film => film.id == match.params.id);
           if (film) { return <Info {...film} /> }
         } }/>
+        <Route exact path='/' render={() => (
+          this.state.redirect && <Redirect to='/login' />
+        )} />
       </div>
     );
   }
