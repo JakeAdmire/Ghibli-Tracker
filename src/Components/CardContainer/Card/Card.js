@@ -49,6 +49,18 @@ export class Card extends Component {
     })
   }
 
+  deleteFavorite = async () => {
+    const { id, user } = this.props;
+    await fetch(`http://localhost:3000/api/users/${user.id}/favorites/${id}`, {
+      method: 'DELETE',
+      body: JSON.stringify({
+        movie_id: id, 
+        user_id: user.id
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    })
+  }
+
   render() {
     const faveClass = this.state.favorite ? 'faved' : '';
     const { poster_path, title, id } = this.props;
