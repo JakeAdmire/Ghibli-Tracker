@@ -13,7 +13,7 @@ Credit for the project goes to:
              [LinkedIn](https://www.linkedin.com/in/kimberly-achkio-myers-85107a2b/)
 
 #### Design
-Short bit of info about design inspiration...
+We wanted to create a very clean and intuitive design. The color palette is soft and inviting. A user can scroll and and when they see a movie they are interested in they can hover to see some details about the film and have the option to 'favorite' the movie. They can even click on that movie to be taken to a new page with even more movie information.
                
 ### Project Screenshots
 
@@ -23,9 +23,7 @@ Short bit of info about design inspiration...
 
 ### Specific things learned:
 In this project we got to implement Redux architecture for the first time. We also used a backend to store user data and got to practice writing and testing asynchronous code.
-```
-  code snippet example
-```
+
 ### Challenges faced:
 Building out the Redux architecture was time consuming in the beginning but we were able to see the benefits of having a global store. Testing was also time consuming.
 
