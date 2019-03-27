@@ -16,10 +16,10 @@ Credit for the project goes to:
 Short bit of info about design inspiration...
                
 ### Project Screenshots
- ![Screenshot 1](screenshot1.png)
- ![Screenshot 2](screenshot2.png)
- ![Screenshot 3](screenshot3.png)
- ![Screenshot 4](screenshot4.png)
+
+<img width="1285" alt="Screen Shot 2019-03-27 at 8 10 54 AM" src="https://user-images.githubusercontent.com/43019784/55082799-f2fc8600-5067-11e9-8817-996074d992ea.png">
+
+<img width="1286" alt="Screen Shot 2019-03-27 at 8 11 12 AM" src="https://user-images.githubusercontent.com/43019784/55082779-ec6e0e80-5067-11e9-9062-972fd64503e6.png">
 
 ### Specific things learned:
 In this project we got to implement Redux architecture for the first time. We also used a backend to store user data and got to practice writing and testing asynchronous code.
@@ -31,13 +31,15 @@ Building out the Redux architecture was time consuming in the beginning but we w
 
 ### Future Implementation Plans
 Short list of things we'd like to implement in the future given time
-- Item 1
-- Item 2
-- Item 3
+- View movie trailers
+- Implement localStorage
+- Add anime shows
 
 ### Tools Used to Build Project
 [React](https://reactjs.org/)
+
 [Redux](https://redux.js.org/)
+
 [Enzyme](https://airbnb.io/enzyme/) & [Jest](https://airbnb.io/enzyme/docs/guides/jest.html)
 
 ## Credits
