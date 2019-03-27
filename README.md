@@ -14,6 +14,10 @@ Credit for the project goes to:
 
 #### Design
 We wanted to create a very clean and intuitive design. The color palette is soft and inviting. A user can scroll and and when they see a movie they are interested in they can hover to see some details about the film and have the option to 'favorite' the movie. They can even click on that movie to be taken to a new page with even more movie information.
+
+- Wireframe:
+Wireframe was built using Adobe XD
+<img width="1440" alt="Screen Shot 2019-03-27 at 8 48 47 AM" src="https://user-images.githubusercontent.com/44077214/55086094-6e146b00-506d-11e9-950b-a4db1fcbc952.png">
                
 ### Project Screenshots
 
