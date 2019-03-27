@@ -78,7 +78,7 @@ describe('Account', () => {
   })
 
   describe('mapDispatchToProps', () => {
-    it.skip('should provide a method to use to dispatch an action creator', () => {
+    it('should provide a method to use to dispatch an action creator', () => {
       const mockId = 1
       const mockName = 'Jake'
       const mockDispatch = jest.fn()
