@@ -66,9 +66,7 @@ describe('CardContainer', () => {
       }]
 
       mockState = {
-        films: mockFilms,
-        filter: 'Show all',
-        user: {}
+        films: mockFilms
       }
 
       const expected = {
