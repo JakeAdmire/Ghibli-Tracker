@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding: 20px;
+  padding: 20px 20px 20px 0;
   margin-right: 20px;
   &::-webkit-scrollbar { width: 90%; }
   &::-webkit-scrollbar-track {
