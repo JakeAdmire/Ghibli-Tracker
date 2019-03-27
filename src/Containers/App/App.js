@@ -50,8 +50,8 @@ export class App extends Component {
     return (
       <div className="App">
         <Header />
-        <NavLink to='/login' className="login">Log in:</NavLink>
-        <button onClick={this.determineFavorites}>FAVES</button>
+        <NavLink to='/login' className="login">LOG IN:</NavLink>
+        <button className="show-faves" onClick={this.determineFavorites}>FAVES</button>
         <Route exact path='/' component={CardContainer} />
         <Route exact path='/login' component={Account} />
         <Route path='/:id' render={ ({match}) => {
