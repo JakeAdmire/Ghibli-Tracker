@@ -83,7 +83,7 @@ export class Card extends Component {
     return (
       <div className="Card" style={ style } >
         <div className="screen"></div>
-        <Link to={`/${id}`}>
+        <Link to={`/movies/${id}`}>
           <h3 className="title">{ title }</h3>
           <p className="language">{original_title}</p>
           <p className="overview">{description}</p>

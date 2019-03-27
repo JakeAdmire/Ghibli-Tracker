@@ -17,9 +17,8 @@ export function CardContainer(props) {
 
 }
 
-const mapStateToProps = (state) => ({
-  films: state.films,
-  user: state.user
+export const mapStateToProps = (state) => ({
+  films: state.films
 })
 
 export default connect(mapStateToProps, null)(CardContainer)
