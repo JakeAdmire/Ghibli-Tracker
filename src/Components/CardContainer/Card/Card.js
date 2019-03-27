@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { addFavorite } from '../../../actions';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import * as help from '../../../helpers/fetch';
@@ -8,6 +7,9 @@ import heart from '../../../media/favorite.svg'
 export class Card extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      redirect: false
+    }
   }
 
   toggleFavorite = async () => {
@@ -21,7 +23,6 @@ export class Card extends Component {
       let methodPrefix = matchFound ? 'delete' : 'add';
       this[`${methodPrefix}Favorite`]();
     } else {
-      console.log('log in, stupid');
       this.setState({redirect: true});
     }
   }
@@ -71,7 +72,7 @@ export class Card extends Component {
   }
 
   render() {
-    const { poster_path, title, id, user, vote_average, original_title } = this.props;
+    const { poster_path, title, id, vote_average, original_title } = this.props;
 
     let heartClass = this.determineFavorite() ? 'fave active' : 'fave';
     let description = this.buildDescription();
@@ -88,7 +89,9 @@ export class Card extends Component {
           <p className="overview">{description}</p>
         </Link>
         <p className="vote"><span>{vote_average}</span>/10</p>
-        <object data={heart} type="image/svg+xml" className={heartClass} onClick={this.toggleFavorite}></object>
+        <object data={heart} type="image/svg+xml" className={heartClass} onClick={this.toggleFavorite}>
+          Image not found
+        </object>
         {
           this.state.redirect && <Redirect to='/login' />
         }
