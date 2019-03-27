@@ -12,7 +12,8 @@ export class Account extends Component {
       email: '',
       password: '',
       loggedIn: false,
-      errorMessage: ''
+      errorMessage: '',
+      toggleSignUp: false
     }
   }
 
@@ -65,23 +66,34 @@ export class Account extends Component {
 
   render() {
     return (
-      <div>
-        <form>
-          <label htmlFor='email'>Email:</label>
-          <input type='text' name='email' value={this.state.email} onChange={this.handleChange} required/>
-          <label htmlFor='password'>Password:</label>
-          <input type='text' name='password' value={this.state.password} onChange={this.handleChange} required/>
-          <button value="Log In" onClick={this.handleSubmit}>Log In</button>
-        </form>
-        <form>
-          <label htmlFor='name'>Name:</label>
-          <input type='text' name='name' value={this.state.name} onChange={this.handleChange} required/>
-          <label htmlFor='email'>Email:</label>
-          <input type='text' name='email' value={this.state.email} onChange={this.handleChange} required/>
-          <label htmlFor='password'>Password:</label>
-          <input type='text' name='password' value={this.state.password} onChange={this.handleChange} required/>
-          <button value="Sign Up" onClick={this.handleSubmit}>Sign Up</button>
-        </form>
+      <div className='Account'>
+        {
+          !this.state.toggleSignUp ? 
+            <form>
+              <div>
+                <button onClick={() => this.setState({toggleSignUp: true})}>Sign In</button>
+                <button className='disabled'>Create Account</button>
+              </div>
+              <label htmlFor='name'>Name:</label>
+              <input placeholder='Kim..' type='text' name='name' value={this.state.name} onChange={this.handleChange} required/>
+              <label htmlFor='email'>Email:</label>
+              <input placeholder='ex. kim@mail.com..' type='text' name='email' value={this.state.email} onChange={this.handleChange} required/>
+              <label htmlFor='password'>Password:</label>
+              <input placeholder='ex. floomples..' type='text' name='password' value={this.state.password} onChange={this.handleChange} required/>
+              <button className='submit' value="Sign Up" onClick={this.handleSubmit}>SIGN UP</button>
+            </form> :
+            <form >
+              <div>
+                <button className='disabled'>Sign In</button>
+                <button onClick={() => this.setState({toggleSignUp: false})}>Create Account</button>
+              </div>
+              <label htmlFor='email'>Email:</label>
+              <input placeholder='ex. kim@mail.com..' type='text' name='email' value={this.state.email} onChange={this.handleChange} required/>
+              <label htmlFor='password'>Password:</label>
+              <input placeholder='ex. floomples..' type='text' name='password' value={this.state.password} onChange={this.handleChange} required/>
+              <button className='submit' value="Log In" onClick={this.handleSubmit}>LOG IN</button>
+            </form>  
+        }
         {
           this.state.loggedIn && <Redirect to='/' />
         }
