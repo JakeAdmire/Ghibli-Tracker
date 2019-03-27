@@ -2,14 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Account } from './Account';
 import { loginUser } from '../../../actions';
-import { mapDispatchToProps } from '../App';
+import { mapDispatchToProps } from './Account';
 
 describe('Account', () => {
   let wrapper;
   let mockEvent;
 
   beforeEach(() => {
-    wrapper=shallow(<Account loginUser={loginUser} />)
+    wrapper=shallow(<Account loginUser={loginUser}/>)
   })
 
   describe('Account', () => {
@@ -62,12 +62,39 @@ describe('Account', () => {
       expect(wrapper.instance().fetchUser).toHaveBeenCalledWith(mockUrl, mockFormData)
     })
 
-    it('createUser should call fetchUser with the correct url and data if Sign Up clicked', () => {
-      const results = {
-        data: {
+    it('fetchUser should return expected data if LogIn is clicked', async () => {
+      const mockUrl = 'www.getusers.com'
+      const mockResults = {
+        status: "success",
+        data: [
+          {
           id: 1,
-          name: 'Kim'
+          name: "Taylor",
+          password: "password",
+          email: "tman2272@aol.com"
+          }
+          ],
+          message: "Retrieved All Users"
         }
+        wrapper.instance().fetchUser = jest.fn().mockImplementation(() => Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockResults)
+        }))
+
+        const response = await wrapper.instance().fetchUser(mockUrl)
+        const result = await response.json()
+        expect(result).toEqual(mockResults)
+    })
+
+    it('fetchUser should throw error if response fails', async () => {
+      const mockUrl = 'www.getusers.com'
+      wrapper.instance().fetchUser = jest.fn().mockImplementationOnce(() => Promise.resolve({
+        ok: false
+      }))
+      try {
+        await wrapper.instance().fetchUser(mockUrl)
+      } catch(error) {
+        expect(error.message).toBe('Request unsuccessful')
       }
     })
 
