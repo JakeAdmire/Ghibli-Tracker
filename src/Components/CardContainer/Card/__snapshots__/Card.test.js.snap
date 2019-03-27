@@ -2,10 +2,26 @@
 
 exports[`Card should match the snapshot 1`] = `
 "<div className=\\"Card\\" style={{...}}>
-  <div className=\\"screen\\">
+  <div className=\\"screen\\" />
+  <Link to=\\"/8392\\">
+    <h3 className=\\"title\\">
+      My Neighbor Totoro
+    </h3>
+    <p className=\\"language\\">
+      となりのトトロ
+    </p>
+    <p className=\\"overview\\">
+      Two sisters move to the country with the...
+    </p>
+  </Link>
+  <p className=\\"vote\\">
     <span>
-      title
+      8.1
     </span>
-  </div>
+    /10
+  </p>
+  <object data=\\"favorite.svg\\" type=\\"image/svg+xml\\" className=\\"fave active\\" onClick={[Function]}>
+    Image not found
+  </object>
 </div>"
 `;
