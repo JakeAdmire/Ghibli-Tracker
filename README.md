@@ -1,7 +1,5 @@
 # MovieTracker
-Short project description... 
-
-...
+Ghibli Tracker is an app that allows you to browse the movies in the Ghibli Collection and add them as favorites to view later.
 
 You can learn more about the assignment spec by following [this link.](https://github.com/turingschool-examples/movie-tracker)
 
@@ -24,12 +22,12 @@ Short bit of info about design inspiration...
  ![Screenshot 4](screenshot4.png)
 
 ### Specific things learned:
-Bit of info about important things we learned
+In this project we got to implement Redux architecture for the first time. We also used a backend to store user data and got to practice writing and testing asynchronous code.
 ```
   code snippet example
 ```
 ### Challenges faced:
-Bit of info about challenges we faced
+Building out the Redux architecture was time consuming in the beginning but we were able to see the benefits of having a global store. Testing was also time consuming.
 
 ### Future Implementation Plans
 Short list of things we'd like to implement in the future given time
@@ -39,7 +37,7 @@ Short list of things we'd like to implement in the future given time
 
 ### Tools Used to Build Project
 [React](https://reactjs.org/)
-
+[Redux](https://redux.js.org/)
 [Enzyme](https://airbnb.io/enzyme/) & [Jest](https://airbnb.io/enzyme/docs/guides/jest.html)
 
 ## Credits
