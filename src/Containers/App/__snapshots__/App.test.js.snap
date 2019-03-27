@@ -6,8 +6,12 @@ exports[`App App should match the snapshot 1`] = `
   <NavLink to=\\"/login\\" className=\\"login\\">
     Log in:
   </NavLink>
+  <button onClick={[Function]}>
+    FAVES
+  </button>
   <Route exact={true} path=\\"/\\" component={[Function: Connect]} />
   <Route exact={true} path=\\"/login\\" component={[Function: Connect]} />
   <Route path=\\"/:id\\" render={[Function: render]} />
+  <Route exact={true} path=\\"/\\" render={[Function: render]} />
 </div>"
 `;
