@@ -99,12 +99,12 @@ export class Account extends Component {
 }
 
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   loginUser: (id, name) => dispatch(loginUser(id, name)),
 })
 
 export default connect(null, mapDispatchToProps)(Account);
 
 Account.propTypes = {
-    loginUser: PropTypes.func.isRequired
+    loginUser: PropTypes.func
 }
