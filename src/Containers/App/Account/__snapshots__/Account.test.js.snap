@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account Account should match the snapshot 1`] = `
+"<div>
+  <form>
+    <label htmlFor=\\"email\\">
+      Email:
+    </label>
+    <input type=\\"text\\" name=\\"email\\" value=\\"\\" onChange={[Function]} required={true} />
+    <label htmlFor=\\"password\\">
+      Password:
+    </label>
+    <input type=\\"text\\" name=\\"password\\" value=\\"\\" onChange={[Function]} required={true} />
+    <button value=\\"Log In\\" onClick={[Function]}>
+      Log In
+    </button>
+  </form>
+  <form>
+    <label htmlFor=\\"name\\">
+      Name:
+    </label>
+    <input type=\\"text\\" name=\\"name\\" value=\\"\\" onChange={[Function]} required={true} />
+    <label htmlFor=\\"email\\">
+      Email:
+    </label>
+    <input type=\\"text\\" name=\\"email\\" value=\\"\\" onChange={[Function]} required={true} />
+    <label htmlFor=\\"password\\">
+      Password:
+    </label>
+    <input type=\\"text\\" name=\\"password\\" value=\\"\\" onChange={[Function]} required={true} />
+    <button value=\\"Sign Up\\" onClick={[Function]}>
+      Sign Up
+    </button>
+  </form>
+  <div>
+    Please sign in or create an account
+  </div>
+</div>"
+`;
