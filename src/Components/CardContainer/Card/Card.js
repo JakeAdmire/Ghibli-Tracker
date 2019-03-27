@@ -3,13 +3,11 @@ import { addFavorite } from '../../../actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as help from '../../../helpers/fetch';
+import heart from '../../../media/favorite.svg'
 
 export class Card extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      favorite: false,
-    }
   }
 
   // dont forget to set the favorites to the users state
@@ -61,21 +59,40 @@ export class Card extends Component {
     })
   }
 
+  determineFavorite = async () => {
+    const { id, user } = this.props
+    if (user.name) {
+      const results = await help.fetchFilms(`http://localhost:3000/api/users/${user.id}/favorites`);
+      return results.data.forEach(film => {
+        if (film.movie_id === id) return true; 
+      })
+    }
+  }
+
+  buildDescription() {
+    const { overview } = this.props;
+    return overview.split('').slice(0, 40).join('') + '...';
+  }
+
   render() {
-    const faveClass = this.state.favorite ? 'faved' : '';
-    const { poster_path, title, id } = this.props;
+    const { poster_path, title, id, user, vote_average, original_title } = this.props;
+
+    let heartClass = this.determineFavorite() ? 'fave active' : 'fave';
+    let description = this.buildDescription();
     let style = { 
       backgroundImage: `url(https://image.tmdb.org/t/p/w500${poster_path})`,
       backgroundSize: 'cover'
       }
     return (
       <div className="Card" style={ style } >
-        <div className="screen">
-          <Link to={`/${id}`}>
-            <span>{ title }</span>
-          </Link>
-          <button className={faveClass} onClick={this.toggleFavorite}>FAVE</button>
-        </div>
+        <div className="screen"></div>
+        <Link to={`/${id}`}>
+          <h3 className="title">{ title }</h3>
+          <p className="language">{original_title}</p>
+          <p className="overview">{description}</p>
+        </Link>
+        <p className="vote"><span>{vote_average}</span>/10</p>
+        <object data={heart} type="image/svg+xml" className={heartClass} onClick={this.toggleFavorite}></object>
       </div>
     )
   }
