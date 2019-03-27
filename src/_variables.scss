@@ -1,3 +1,11 @@
+$vibrant-color: #E63E3E;
+$vibrant-hover: #9a3535;
+
+$accent-color: #E88989;
+$accent-hover: #D16666;
+
+$ease: all .2s ease;
+
 @mixin flexBox($dir, $items, $just) {
   display: flex;
   flex-direction: $dir;
