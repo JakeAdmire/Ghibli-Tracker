@@ -54,13 +54,17 @@ export class Account extends Component {
   }
 
   async fetchUser(url, data) {
-    const response = await fetch(`http://localhost:3000${url}`, {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data), 
-    })
-    const results = await response.json();
-    return results;
+    try {
+      const response = await fetch(`http://localhost:3000${url}`, {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data), 
+      })
+      const results = await response.json();
+      return results;
+    } catch(error) {
+      throw new Error('Request unsuccessful')
+    }
   }
 
   render() {
