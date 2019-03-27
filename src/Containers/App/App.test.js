@@ -52,14 +52,9 @@ describe('App', () => {
     })
   
     it('should match the snapshot', () => {
-  
-      const props = {
-        addFilms: jest.fn()
-      }
-  
+      const props = { addFilms: jest.fn() }
       wrapper = shallow(<App {...props} />)
       expect(wrapper.debug()).toMatchSnapshot();
-  
     })
 
   })
@@ -94,7 +89,8 @@ describe('App', () => {
       }
 
       const expected = {
-        films: mockFilms
+        films: mockFilms,
+        user: {}
       }
 
       const mappedProps = mapStateToProps(mockState)
