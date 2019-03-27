@@ -1,15 +1,20 @@
 .Card {
   width: 334px;
   height: 500px;
-  margin: auto;
+  margin: 0 10px;
   border-radius: 30px;
   transition: all .2s ease;
   position: relative;
   overflow: hidden;
+  flex: 0 0 auto;
 
   &:hover { 
     transform: scale(1.05); 
-    cursor: pointer;
+    a { margin-bottom: 0; }
+    .screen { opacity: 1; }
+    .fave { margin-top: 15px; }
+    .title { margin-top: 23em; }
+    .vote { margin-top: 1.5rem; }
   }
 
   .screen {
@@ -20,22 +25,40 @@
     background: radial-gradient(hsla(0, 0%, 0%, 0.4) 30%, hsla(0, 0%, 0%, 0.8) 95%);
     opacity: 0;
 
-    transition: all .2s ease;
-
-    span {
-      display: block;
-      transition: all .3s ease;
-      margin: 25em 0 0 20px;
-
-      @include customFont(20px, 600, initial, white);
+    transition: $ease;
+    z-index: -1
+  }
+  a {
+    position: absolute;
+    bottom: 15px;
+    display: block;
+    margin-bottom: -10rem;
+    padding: 0 15px;
+    font-family: 'raleway';
+    text-decoration: none;
+    transition: $ease;
+    * {
+      margin: 0;
+      color: white;
     }
-
-    &:hover {
-      opacity: 1;
-
-      span {
-        margin-top: 23em;
-      }
-    }
+    .title { @include customFont(32px, initial, none, white); }
+    .language { color: $vibrant-color; }
+  }
+  .vote {
+    position: absolute;
+    top: -14px; left: 15px;
+    margin-top: -1rem;
+    font-family: 'Poiret One';
+    transition: $ease;
+    @include customFont(24px, initial, initial, $vibrant-color);
+    span { color: white; }
+  }
+  .fave {
+    display: block;
+    margin: -50px 15px 0 0px;
+    transition: all .3s ease;
+    width: 50px;
+    position: absolute;
+    top: 0; right: 0;
   }
 }
