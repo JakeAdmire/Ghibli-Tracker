@@ -77,5 +77,5 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 App.propTypes = {
   addFilms: PropTypes.func.isRequired,
   films: PropTypes.array,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object
 }
