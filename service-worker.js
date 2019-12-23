@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Ghibli-Tracker/precache-manifest.75a484d4a1f2554ffaccf5234049e05f.js"
+  "/Ghibli-Tracker/precache-manifest.d3dfebefdbefabf538e813992d941cee.js"
 );
 
 workbox.clientsClaim();

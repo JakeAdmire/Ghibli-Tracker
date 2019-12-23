@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "972655cb73fed10fe70c",
+    "revision": "f162b73b1f73b5786edc",
     "url": "/Ghibli-Tracker/static/css/main.2ce096c7.chunk.css"
   },
   {
-    "revision": "972655cb73fed10fe70c",
-    "url": "/Ghibli-Tracker/static/js/main.c18931c3.chunk.js"
+    "revision": "f162b73b1f73b5786edc",
+    "url": "/Ghibli-Tracker/static/js/main.799bdf5d.chunk.js"
   },
   {
     "revision": "c1f08d2877ccc4b8219f",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/Ghibli-Tracker/static/media/favorite.ff2179cb.svg"
   },
   {
-    "revision": "b10fcca3857b19f312d6b14e4ff5574d",
+    "revision": "70ef7da5c2f238473e377ce1389977cc",
     "url": "/Ghibli-Tracker/index.html"
   }
 ];
