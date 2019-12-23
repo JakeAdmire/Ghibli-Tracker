@@ -99,7 +99,7 @@ export class Account extends Component {
             </form>  
         }
         {
-          this.state.loggedIn && <Redirect to='/' />
+          this.state.loggedIn && <Redirect to='/ghibli-tracker' />
         }
         {
           this.state.errorMessage ? (

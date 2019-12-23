@@ -51,7 +51,8 @@ export class App extends Component {
   countFavorites = async () => {
     const { user } = this.props;
     const results = user.name && await help.fetchFilms(`http://localhost:3000/api/users/${user.id}/favorites`);
-    return user.name ? 'FAVES' + '(' + results.data.length + ')' : 'FAVES(0)';
+    // return user.name ? 'FAVES' + '(' + results.data.length + ')' : 'FAVES(0)';
+    return user.name ? `FAVES(${results.data.length})` : 'FAVES(0)';
   }
 
   render() {
@@ -65,14 +66,14 @@ export class App extends Component {
         <NavLink to='/login' className="login">{welcome}</NavLink>
         <button className="show-faves" onClick={this.determineFavorites}>FAVES</button>
         {
-          this.state.loading ? <Loader /> : <Route exact path='/' component={CardContainer} />
+          this.state.loading ? <Loader /> : <Route exact path='/ghibli-tracker' component={CardContainer} />
         }
         <Route exact path='/login' component={Account} />
         <Route path='/movies/:id' render={ ({match}) => {
-          const film = this.props.films.find(film => film.id == match.params.id);
+          const film = this.props.films.find(film => film.id === match.params.id);
           if (film) { return <Info {...film} /> }
         } }/>
-        <Route exact path='/' render={() => {
+        <Route exact path='/ghibli-tracker' render={() => {
           if (this.state.redirect) return <Redirect to='/login' />
           if (this.state.showFaves) return <Redirect to='/favorites' />
         }} />
