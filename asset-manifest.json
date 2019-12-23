@@ -1,14 +1,14 @@
 {
-  "main.css": "/ghibli-tracker/static/css/main.2ce096c7.chunk.css",
-  "main.js": "/ghibli-tracker/static/js/main.c18931c3.chunk.js",
-  "main.js.map": "/ghibli-tracker/static/js/main.c18931c3.chunk.js.map",
-  "runtime~main.js": "/ghibli-tracker/static/js/runtime~main.e27c783b.js",
-  "runtime~main.js.map": "/ghibli-tracker/static/js/runtime~main.e27c783b.js.map",
-  "static/js/2.9d2d5c3d.chunk.js": "/ghibli-tracker/static/js/2.9d2d5c3d.chunk.js",
-  "static/js/2.9d2d5c3d.chunk.js.map": "/ghibli-tracker/static/js/2.9d2d5c3d.chunk.js.map",
-  "index.html": "/ghibli-tracker/index.html",
-  "precache-manifest.81982cda0efe1a0e1a6cab1516ca20dd.js": "/ghibli-tracker/precache-manifest.81982cda0efe1a0e1a6cab1516ca20dd.js",
-  "service-worker.js": "/ghibli-tracker/service-worker.js",
-  "static/css/main.2ce096c7.chunk.css.map": "/ghibli-tracker/static/css/main.2ce096c7.chunk.css.map",
-  "static/media/favorite.svg": "/ghibli-tracker/static/media/favorite.ff2179cb.svg"
+  "main.css": "/Ghibli-Tracker/static/css/main.2ce096c7.chunk.css",
+  "main.js": "/Ghibli-Tracker/static/js/main.c18931c3.chunk.js",
+  "main.js.map": "/Ghibli-Tracker/static/js/main.c18931c3.chunk.js.map",
+  "runtime~main.js": "/Ghibli-Tracker/static/js/runtime~main.909b10ed.js",
+  "runtime~main.js.map": "/Ghibli-Tracker/static/js/runtime~main.909b10ed.js.map",
+  "static/js/2.9d2d5c3d.chunk.js": "/Ghibli-Tracker/static/js/2.9d2d5c3d.chunk.js",
+  "static/js/2.9d2d5c3d.chunk.js.map": "/Ghibli-Tracker/static/js/2.9d2d5c3d.chunk.js.map",
+  "index.html": "/Ghibli-Tracker/index.html",
+  "precache-manifest.75a484d4a1f2554ffaccf5234049e05f.js": "/Ghibli-Tracker/precache-manifest.75a484d4a1f2554ffaccf5234049e05f.js",
+  "service-worker.js": "/Ghibli-Tracker/service-worker.js",
+  "static/css/main.2ce096c7.chunk.css.map": "/Ghibli-Tracker/static/css/main.2ce096c7.chunk.css.map",
+  "static/media/favorite.svg": "/Ghibli-Tracker/static/media/favorite.ff2179cb.svg"
 }

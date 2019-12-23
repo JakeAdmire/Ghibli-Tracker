@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ghibli-tracker/precache-manifest.81982cda0efe1a0e1a6cab1516ca20dd.js"
+  "/Ghibli-Tracker/precache-manifest.75a484d4a1f2554ffaccf5234049e05f.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/ghibli-tracker/index.html", {
+workbox.routing.registerNavigationRoute("/Ghibli-Tracker/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
