@@ -43,7 +43,8 @@
 - HTML5
 - SCSS 
 - JavaScript
-- jQuery
+- ReactJS
+- React Router
 - Jest & Enzyme
 
 ## Getting Started
