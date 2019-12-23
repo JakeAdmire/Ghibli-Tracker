@@ -81,7 +81,7 @@ Click [here](https://github.com/JakeAdmire/Ghibli-Tracker/graphs/contributors) t
 
 ## Assignment Details
 
-The intended assignment was to practice consuming and iterating through a massive API. 
+The intended assignment was to learn to cooperate with a pre-built backend API in order to allow the signing in/out of users. 
 
 ---
 
