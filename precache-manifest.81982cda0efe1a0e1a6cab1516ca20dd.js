@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "f6b2fc58b8f23a3b17ff",
+    "revision": "972655cb73fed10fe70c",
     "url": "/ghibli-tracker/static/css/main.2ce096c7.chunk.css"
   },
   {
-    "revision": "f6b2fc58b8f23a3b17ff",
-    "url": "/ghibli-tracker/static/js/main.9066a1aa.chunk.js"
+    "revision": "972655cb73fed10fe70c",
+    "url": "/ghibli-tracker/static/js/main.c18931c3.chunk.js"
   },
   {
     "revision": "aee7a20c7c6ea14766b2",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/ghibli-tracker/static/media/favorite.ff2179cb.svg"
   },
   {
-    "revision": "182041c2819b57dcc3b91df2fc7708a5",
+    "revision": "b3ee964f91558e52702f2e1a23ec04c7",
     "url": "/ghibli-tracker/index.html"
   }
 ];
