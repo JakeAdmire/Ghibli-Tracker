@@ -1,9 +1,9 @@
 {
-  "name": "movie-tracker-app",
+  "homepage": "http://jakeadmire.github.io/ghibli-tracker",
+  "name": "ghibli-tracker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
@@ -16,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,6 +32,8 @@
   "devDependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
-    "enzyme-to-json": "^3.3.5"
+    "enzyme-to-json": "^3.3.5",
+    "gh-pages": "^2.1.1",
+    "node-sass": "^4.13.0"
   }
 }
