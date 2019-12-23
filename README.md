@@ -99,7 +99,7 @@ _@ Turing School of Software & Design, Denver, CO._
 [linkedin-url]: https://linkedin.com/in/jakeadmire
 
 [gmail-shield]: https://img.shields.io/badge/-Email-red.svg?style=for-the-badge&logo=gmail&logoColor=white
-[gmail-url]: https://mailto:jakeadmire1@gmail.com
+[gmail-url]: mailto:jakeadmire1@gmail.com
 
 [github-shield]: https://img.shields.io/badge/dynamic/json?label=Follow&query=length&url=https://api.github.com/users/jakeadmire/followers&style=for-the-badge&logo=github
 [github-url]: https://github.com/JakeAdmire/
