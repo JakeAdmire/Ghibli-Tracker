@@ -102,4 +102,4 @@ _@ Turing School of Software & Design, Denver, CO._
 [gmail-url]: https://mailto:jakeadmire1@gmail.com
 
 [github-shield]: https://img.shields.io/badge/dynamic/json?label=Follow&query=length&url=https://api.github.com/users/jakeadmire/followers&style=for-the-badge&logo=github
-[github-url]: https://mailto:jakeadmire1@gmail.com
+[github-url]: https://github.com/JakeAdmire/
