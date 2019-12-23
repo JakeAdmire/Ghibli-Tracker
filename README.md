@@ -1,55 +1,104 @@
-# MovieTracker
-Ghibli Tracker is an app that allows you to browse the movies in the Ghibli Collection and add them as favorites to view later.
+###### Top
 
-You can learn more about the assignment spec by following [this link.](https://github.com/turingschool-examples/movie-tracker)
+<br />
+<p align="center">
+  <a href="https://github.com/JakeAdmire/Ghibli-Tracker">
+    <img src="https://p7.hiclipart.com/preview/866/176/918/ghibli-museum-dog-studio-ghibli-logo-totoro-studio-ghibli.jpg" alt="Logo" width="300" height="150">
+  </a>
+  <h1 align="center">Ghibli Tracker</h1>
+  <p align="center">
+    Explore your favorite films from Studio Ghibli!
+    <br />
+    <br />
+    <b><a href="https://jakeadmire.github.io/Ghibli-Tracker/">View Demo</a></b>
+  </p>
+</p>
+<div align="center">
 
-### Contact Info
-Credit for the project goes to:
-- Jacob Admire: [GitHub](https://github.com/JakeAdmire), 
-                [Email](mailto:JakeAdmire1@gmail.com),
-                [LinkedIn](https://www.linkedin.com/in/jakeadmire)
-- Kim Myers: [GitHub](https://github.com/kimmichurri), 
-             [Email](mailto:kimberly.achkio@gmail.com),
-             [LinkedIn](https://www.linkedin.com/in/kimberly-achkio-myers-85107a2b/)
+[![LinkedIn][linkedin-shield]][linkedin-url] [![Gmail][gmail-shield]][gmail-url] [![GitHub][github-shield]][github-url]
+</div>
 
-#### Design
-We wanted to create a very clean and intuitive design. The color palette is soft and inviting. A user can scroll and and when they see a movie they are interested in they can hover to see some details about the film and have the option to 'favorite' the movie. They can even click on that movie to be taken to a new page with even more movie information.
+## Table of Contents
 
-- Wireframe:
-Wireframe was built using Adobe XD
-<img width="1440" alt="Screen Shot 2019-03-27 at 8 48 47 AM" src="https://user-images.githubusercontent.com/44077214/55086094-6e146b00-506d-11e9-950b-a4db1fcbc952.png">
-               
-### Project Screenshots
+- [About The Project](#About-The-Project)
+  - [Media](#Media)
+  - [Built With](#Built-With)
+- [Getting Started](#Getting-Started)
+  - [Prerequisites](#Prerequisites)
+  - [Installation](#Installation)
+- [Contributors](#Contributors)
+- [Assignment Details](#Assignment-Details)
 
-<img width="1285" alt="Screen Shot 2019-03-27 at 8 10 54 AM" src="https://user-images.githubusercontent.com/43019784/55082799-f2fc8600-5067-11e9-8817-996074d992ea.png">
-
-<img width="1286" alt="Screen Shot 2019-03-27 at 8 11 12 AM" src="https://user-images.githubusercontent.com/43019784/55082779-ec6e0e80-5067-11e9-9062-972fd64503e6.png">
-
-### Specific things learned:
-In this project we got to implement Redux architecture for the first time. We also used a backend to store user data and got to practice writing and testing asynchronous code.
-
-### Challenges faced:
-Building out the Redux architecture was time consuming in the beginning but we were able to see the benefits of having a global store. Testing was also time consuming.
-
-### Future Implementation Plans
-Short list of things we'd like to implement in the future given time
-- View movie trailers
-- Implement localStorage
-- Add anime shows
-
-### Tools Used to Build Project
-[React](https://reactjs.org/)
-
-[Redux](https://redux.js.org/)
-
-[Enzyme](https://airbnb.io/enzyme/) & [Jest](https://airbnb.io/enzyme/docs/guides/jest.html)
-
-## Credits
-Credit for this project goes to [Jake Admire](https://github.com/JakeAdmire) and [Kim Myers](https://github.com/kimmichurri)
-
-More contact info can be found [here](https://github.com/JakeAdmire/MovieTracker#contact-info)
+## About The Project
+  
+:movie_camera: **Ghibli Tracker** provides an elegant way to explore all the films from Studio Ghibli and learn fun facts about each of them!
 
 ---
-This project was assigned by Christie Lynam and David Whitaker 
 
-*@ Turing School of Software and Design, Denver, CO.*
+### Media:
+
+![full page screenshot](https://user-images.githubusercontent.com/43019784/55082799-f2fc8600-5067-11e9-8817-996074d992ea.png)
+
+### Built With:
+- HTML5
+- SCSS 
+- JavaScript
+- jQuery
+- Jest & Enzyme
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+---
+
+### Prerequisites
+
+* npm
+```sh
+npm install npm@latest -g
+```
+
+---
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/JakeAdmire/Ghibli-Tracker
+```
+2. Install NPM packages
+```sh
+cd Ghibli-Tracker && npm install
+```
+
+## Contributors
+
+Click [here](https://github.com/JakeAdmire/Ghibli-Tracker/graphs/contributors) to view a graph of the contributions to this project.
+
+- [Jake Admire](https://github.com/jakeadmire)
+- [Kim Myers](https://github.com/kimmichurri)
+
+## Assignment Details
+
+The intended assignment was to practice consuming and iterating through a massive API. 
+
+---
+
+This project was assigned by Christie Lynam and David Whitaker
+
+_@ Turing School of Software & Design, Denver, CO._
+
+---
+
+**[BACK TO TOP](#top)**
+
+<!-- URL References  -->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-0077b5.svg?style=for-the-badge&logo=linkedin
+[linkedin-url]: https://linkedin.com/in/jakeadmire
+
+[gmail-shield]: https://img.shields.io/badge/-Email-red.svg?style=for-the-badge&logo=gmail&logoColor=white
+[gmail-url]: https://mailto:jakeadmire1@gmail.com
+
+[github-shield]: https://img.shields.io/badge/dynamic/json?label=Follow&query=length&url=https://api.github.com/users/jakeadmire/followers&style=for-the-badge&logo=github
+[github-url]: https://mailto:jakeadmire1@gmail.com
